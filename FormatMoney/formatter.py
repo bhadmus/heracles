@@ -16,13 +16,13 @@ def formatMoney(number):
     try:
         if number.isdigit():
             number = int(number)
-            money_value = round(number, 2)
-            return str(money_value)
+            money_value = '{:2,.2f}'.format(number)
+            return money_value
 
         else:
             number = float(number)
-            money_value = round(number, 2)
-            return str(money_value)
+            money_value = '{:2,.2f}'.format(number)
+            return money_value
 
     except:
         return TypeError(
