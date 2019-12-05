@@ -11,16 +11,20 @@ number = input('Please insert a number \n')
 def formatMoney(number):
     '''
     :param number:
-    :return: money_value (format result to string)
+    :return: money_value (return the input as a string)
     '''
-    if type(number) in (int, float):
-        try:
+    try:
+        if number.isdigit():
+            number = int(number)
             money_value = round(number, 2)
             return str(money_value)
-        except Exception as e:
-            ValueError('Invalid value with error', e)
 
-    else:
+        else:
+            number = float(number)
+            money_value = round(number, 2)
+            return str(money_value)
+
+    except:
         return TypeError(
             f'Invalid type of {type(number)} for {number}. Provide Integer or Float')
 
